@@ -1,7 +1,7 @@
 import tkinter as tk
-from file_loader import carica_file_audio, carica_cartella
-from analyzer import AudioAnalyzer
-from logger import logger
+from src.file_loader import carica_file_audio, carica_cartella
+from src.analyzer import AudioAnalyzer
+from src.logger import logger
 
 class DJProToolApp(tk.Tk):
     def __init__(self):
