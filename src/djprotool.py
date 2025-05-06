@@ -1,4 +1,3 @@
-cat > src/djprotool.py << 'EOF'
 import tkinter as tk
 from file_loader import carica_file_audio, carica_cartella
 from analyzer import AudioAnalyzer
@@ -11,15 +10,21 @@ class DJProToolApp(tk.Tk):
         self.geometry("800x600")
         self.analyzer = AudioAnalyzer()
 
+        # Frame comandi in orizzontale in cima
         cmd_frame = tk.Frame(self)
         cmd_frame.pack(fill=tk.X)
-        tk.Button(cmd_frame, text="Carica File", command=self.load_file).pack(side=tk.LEFT, padx=5, pady=5)
-        tk.Button(cmd_frame, text="Analizza BPM", command=self.analyze).pack(side=tk.LEFT, padx=5, pady=5)
-        tk.Button(cmd_frame, text="Seleziona Cartella", command=self.load_folder).pack(side=tk.LEFT, padx=5, pady=5)
+        tk.Button(cmd_frame, text="Carica File", command=self.load_file)\
+            .pack(side=tk.LEFT, padx=5, pady=5)
+        tk.Button(cmd_frame, text="Analizza BPM", command=self.analyze)\
+            .pack(side=tk.LEFT, padx=5, pady=5)
+        tk.Button(cmd_frame, text="Seleziona Cartella", command=self.load_folder)\
+            .pack(side=tk.LEFT, padx=5, pady=5)
 
+        # Canvas principale
         self.canvas = tk.Canvas(self, bg="white")
         self.canvas.pack(fill=tk.BOTH, expand=True)
 
+        # Label di stato in basso
         self.status_label = tk.Label(self, text="Pronto.", anchor=tk.W)
         self.status_label.pack(fill=tk.X)
 
@@ -56,5 +61,3 @@ class DJProToolApp(tk.Tk):
 
     def _display_text(self, text: str):
         self.canvas.create_text(400, 300, text=text)
-EOF
-
