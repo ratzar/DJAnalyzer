@@ -12,13 +12,7 @@ from energy           import calcola_energia
 from cue              import rileva_cue
 from quantization     import quantizza_audio
 from harmony_opt      import ottimizza_chiave
-
-# --- helper per Text widget ---
-def append_output(widget, text):
-    widget.configure(state="normal")
-    widget.insert("end", text + "\n")
-    widget.see("end")
-    widget.configure(state="disabled")
+from output_helper    import init_output, append_output, clear_output
 
 # Camelot map
 CAMELOT_MAP = {
@@ -36,16 +30,17 @@ class DJProToolApp(tk.Tk):
         self.analyzer = AudioAnalyzer()
         self.path = None
 
-        # Bottoni
-        frame = tk.Frame(self, pady=10)
-        frame.pack(fill=tk.X)
-        tk.Button(frame, text="Seleziona File", command=self.load_file).pack(side=tk.LEFT, padx=5)
-        tk.Button(frame, text="Seleziona Cartella", command=self.load_folder).pack(side=tk.LEFT, padx=5)
-        tk.Button(frame, text="Analizza", command=self.analyze).pack(side=tk.LEFT, padx=5)
+        # Controlli
+        ctrl = tk.Frame(self, pady=10)
+        ctrl.pack(fill=tk.X)
+        tk.Button(ctrl, text="File", command=self.load_file).pack(side=tk.LEFT, padx=5)
+        tk.Button(ctrl, text="Cartella", command=self.load_folder).pack(side=tk.LEFT, padx=5)
+        tk.Button(ctrl, text="Analizza", command=self.analyze).pack(side=tk.LEFT, padx=5)
 
-        # Output area
+        # Output
         self.txt = tk.Text(self, state="disabled", wrap=tk.WORD)
         self.txt.pack(fill=tk.BOTH, expand=True, padx=10, pady=5)
+        init_output(self.txt)
 
     def load_file(self):
         f = carica_file_audio()
@@ -64,46 +59,46 @@ class DJProToolApp(tk.Tk):
             append_output(self.txt, "Seleziona prima file o cartella.")
             return
 
-        # Header
+        clear_output(self.txt)
         append_output(self.txt, "Analisi files:")
         append_output(self.txt, "Avvio analisi…")
 
-        # Prepare results dir
+        # Prepara cartella risultati
         base = self.path if os.path.isdir(self.path) else os.path.dirname(self.path)
         outdir = os.path.join(base, 'risultati', datetime.datetime.now().strftime('Risultati_%Y%m%d_%H%M%S'))
         os.makedirs(outdir, exist_ok=True)
 
-        # Collect files
+        # Lista file da processare
         if os.path.isfile(self.path):
-            files = [self.path]
+            file_list = [self.path]
         else:
-            files = [os.path.join(self.path, f) for f in os.listdir(self.path)
-                     if f.lower().endswith(('.mp3', '.wav'))]
-        if not files:
+            file_list = [os.path.join(self.path, f) for f in os.listdir(self.path)
+                         if f.lower().endswith(('.mp3', '.wav'))]
+        if not file_list:
             append_output(self.txt, "Nessun file audio.")
             return
 
-        # Process each file
-        for idx, filepath in enumerate(files, 1):
-            name = os.path.basename(filepath)
+        # Ciclo file
+        for idx, fpath in enumerate(file_list, 1):
+            name = os.path.basename(fpath)
             clean = re.sub(r"\s*\[.*?\]", "", os.path.splitext(name)[0]) + os.path.splitext(name)[1]
-            append_output(self.txt, f"{idx}. Analizzo: {clean}")
+            append_output(self.txt, f"{idx}. {clean}")
             try:
-                audio = self.analyzer.carica_audio(filepath)
+                audio = self.analyzer.carica_audio(fpath)
                 bpm = int(self.analyzer.calcola_bpm(audio))
-                key = rileva_chiave(filepath)
-                camelot = CAMELOT_MAP.get(key, '?')
-                energy = int(calcola_energia(filepath) * 100)
-                cues = rileva_cue(filepath)
-                append_output(self.txt, f"   → BPM:{bpm}, Key:{key} ({camelot}), Energy:{energy}, Cues:{cues}")
+                key = rileva_chiave(fpath)
+                cam = CAMELOT_MAP.get(key, '?')
+                energy = int(calcola_energia(fpath) * 100)
+                cues = rileva_cue(fpath)
+                append_output(self.txt, f"   → BPM: {bpm}, Key: {key} ({cam}), Energy: {energy}, Cues: {cues}")
             except Exception as e:
                 logger.error(f"Errore su {name}: {e}")
                 append_output(self.txt, f"   Errore su {clean}")
 
-        # Save and open
+        # Salvataggio e apertura
         rpt = os.path.join(outdir, 'risultati.txt')
-        with open(rpt, 'w', encoding='utf-8') as f:
-            f.write(self.txt.get('1.0', 'end'))
+        with open(rpt, 'w', encoding='utf-8') as R:
+            R.write(self.txt.get('1.0', 'end'))
         append_output(self.txt, f"Fine. Risultati in: {outdir}")
         try:
             os.startfile(outdir)

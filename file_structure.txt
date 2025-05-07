@@ -1,0 +1,65 @@
+Elenco del percorso delle cartelle per il volume Volume
+Numero di serie del volume: 82F1-AD31
+D:\PROGETTI\DJANALYZER
+|   .gitignore
+|   analyzer_librosa.py
+|   file_list.txt
+|   file_structure.txt
+|   readme.md
+|   setup.py
+|   
++---docs
++---documentation
+|       organizzazioen brani musciali dj.pdf
+|       
++---scripts
+|   |   Codice Collaudato.py
+|   |   DJAnalyzer_fixed.py
+|   |   djpro.bat
+|   |   DJpro.py
+|   |   DJprotool.py
+|   |   djproTOOL.txt
+|   |   DJprotool01.py
+|   |   djproTOOLBAT.BAT
+|   |   djpro_error.log
+|   |   ESECUZIONE
+|   |   import-legacy.bat
+|   |   Trasferimento_a_GitHub.bat
+|   |   
+|   +----p
+|   +---docs
+|   +---src
+|   \---tests
++---src
+|   |   analyzer.py
+|   |   DJprotool.py
+|   |   file_loader.py
+|   |   logger.py
+|   |   main.py
+|   |   __init__.py
+|   |   
+|   +---djanalyzer.egg-info
+|   |       dependency_links.txt
+|   |       PKG-INFO
+|   |       requires.txt
+|   |       SOURCES.txt
+|   |       top_level.txt
+|   |       
+|   +---DJprotool_files
+|   |       conversation-small-fbaqw7iw.css
+|   |       cot-message-lf3q5fj1.css
+|   |       FormattedText-kb0ehjj7.css
+|   |       root-ikj091mb.css
+|   |       saved_resource.html
+|   |       
+|   \---__pycache__
+|           analyzer.cpython-310.pyc
+|           djprotool.cpython-310.pyc
+|           file_loader.cpython-310.pyc
+|           logger.cpython-310.pyc
+|           main.cpython-310.pyc
+|           __init__.cpython-310.pyc
+|           
+\---tests
+        __init__.py
+        
