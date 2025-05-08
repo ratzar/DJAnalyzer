@@ -24,7 +24,7 @@ jobs:
     - name: Commit changes
       run: |
         git config --global user.name "ratzar"  # Sostituisci con il tuo nome GitHub
-        git config --global user.email "tuo-email@example.com"  # Sostituisci con la tua email
+        git config --global user.email "ingrametti@gmail.com"  # Sostituisci con la tua email
         git add .  # Aggiungi tutte le modifiche
         git commit -m "Commit automatico via GitHub Actions"  # Messaggio di commit
         git push origin master  # Fai il push delle modifiche
