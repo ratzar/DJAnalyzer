@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
@@ -172,3 +173,19 @@ cython_debug/
 
 # PyPI configuration file
 .pypirc
+=======
+# Python
+__pycache__/
+*.py[cod]
+.env
+venv/
+
+# Output e log
+*.log
+output/
+
+# IDE e sistema
+.vscode/
+.DS_Store
+Thumbs.db
+>>>>>>> f4f41a4 (Inizializzazione del repository)
