@@ -1,0 +1,73 @@
+algoritmo
+API (a-p-i)
+backend (bèc end)
+bug (bag)
+debug (di bag)
+deploy (di ploi)
+frontend (fron end)
+framework (frèim uork)
+full stack (ful stac)
+hosting (òsting)
+HTML (acca ti emme elle)
+CSS (ci esse esse)
+JavaScript (giava script o giava script)
+libreria (software)
+machine learning (mascin lèrning)
+modello predittivo
+neural network (niural nét uork)
+prompt (pront)
+script (scrip)
+server (sèrver)
+sistema operativo
+snippet (snìpet)
+stack (stac)
+token (tòken)
+UI (u ai o iu ai)
+UX (u ex o iu ex)
+variabile
+
+ChatGPT (ciat gi pi ti o ciat gpt)
+dataset (dèita set)
+fine-tuning (fain tiùning)
+generativo
+GPT (gi pi ti o gpt)
+inferenza
+LLM (elle elle emme)
+NLP (enne elle pi)
+prompt engineering (prompt ingegnering)
+tokenizzazione
+training (trèining)
+vettorializzazione
+
+commit (comìt)
+forkare (forcare)
+pushare (pusciare)
+pull request (pul ricuèst)
+repository (ripòsitori)
+scriptare (scrip tàre)
+snippet (snìpet)
+uploadare (ap lodare)
+versioning (versioning)
+
+feedback (fid bec)
+task (tasc)
+workflow (uorc flò)
+deadline (dèd lain)
+meeting (miting)
+brainstorming (brèn stòrming)
+update (apdèit)
+draft (dràft)
+issue (isciù)
+milestone (mailstòn)
+goal (gòl)
+feature (fìciur)
+release (rilìs)
+roadmap (ròdmep)
+
+buttare su un server
+fare il deploy
+scrivere un prompt
+fare il training
+spingere su GitHub (ghit ab o gitab)
+refactorare il codice
+buildare l'app (bildare l'app)

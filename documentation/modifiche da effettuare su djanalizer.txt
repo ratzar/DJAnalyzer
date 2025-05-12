@@ -1,0 +1,32 @@
+Modifiche da fare sul file  Deejay analizza
+
+il programma deve salvare una lista dell'elaborazione  nella stessa cartella della musica questa lista deve contenere i seguenti dati:
+
+1-  BPM  numero intero senza decimali
+    vicino ai BPM  deve indicare se la prima battuta inizia in battere  con una B quindi ad esempio sarà 110B o in levare con una L   quindi ad esempio sarebbe 110L
+
+2 - chiave armonica      e racchiusa fra due parentesi ( ) il numero corrispondentesulla ruota di Candelot
+3 - armoniche corrispondenti sempre sulla ruota di Camelot per un mixaggio armonico
+4 - energia della canzone
+5 - il colore corrispondente sulla scala di Camelot
+
+-------------------
+ pulsante per poter mettere in pausa o finire   qualsiasi operazione
+-------------------
+ tasto CLEAR  per cancellare quello che viene scritto nei riquadri bianchi in modo da poter iniziare un'altra elaborazione così viene tutto sommato uno dopo l'altro se non si chiude il programma
+-------------------
+ includere un'altra finestra più grossa in cui  deve esserci dentro spek  il cui sorgente è pubblico.
+-------------------
+ quando il programma carico una canzone per analizzare la deve essere immediatamente anche visibile nel riquadro dove andrà spek
+-------------------
+ ovviamente quando caricherà un'altra canzone sarà visibile l'altra canzone
+ -------------------
+  è assolutamente prioritaria la qualità dopo essere stata fatta la quantizzazione,  i file risultanti oltre che essere in mono sono decisamente molto più piccoli come dimensione 
+  degli originali questo significa che sono stati presi di più o mancano informazioni per cui è ovvio che la qualità decade.
+  
+  
+
+ 
+
+
+   

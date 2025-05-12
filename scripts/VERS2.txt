@@ -1,0 +1,137 @@
+import os
+import pandas as pd
+import tkinter as tk
+from tkinter import ttk, filedialog, messagebox
+import librosa
+import soundfile as sf
+import subprocess
+import numpy as np
+from matplotlib.figure import Figure
+from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
+
+# Helper mappings for Camelot keys and compatibility
+definitions omitted for brevity (use same as before)
+
+class DJAnalyzerApp:
+    def __init__(self, root):
+        self.root = root
+        self.root.title("DJAnalyzer")
+        self.output_folder = os.getcwd()
+
+        # Left panel: controls and list
+        self.left_frame = tk.Frame(root)
+        cols = ("file","bpm","key","energy","compatible")
+        self.tree = ttk.Treeview(self.left_frame, columns=cols, show='headings')
+        for c in cols:
+            self.tree.heading(c, text=c.capitalize())
+        self.tree.pack(fill=tk.BOTH, expand=True)
+
+        button_defs = [
+            ("Select Folder", self.select_folder),
+            ("Analyze", self.run_analysis),
+            ("Optimize", self.optimize_playlist),
+            ("Quantize", self.quantize_tracks),
+            ("Check Quality", self.check_quality),
+            ("Load & Display", self.load_selected),
+            ("Pause/Clear", self.stop_all)
+        ]
+        for text, cmd in button_defs:
+            btn = ttk.Button(self.left_frame, text=text, command=cmd)
+            btn.pack(fill=tk.X, pady=2)
+        self.left_frame.pack(side=tk.LEFT, fill=tk.Y, padx=5, pady=5)
+
+        # Right panel: waveform and spectrum
+        self.right_paned = tk.PanedWindow(root, orient=tk.VERTICAL)
+        # Waveform
+        self.wave_frame = tk.Frame(self.right_paned, bd=2, relief=tk.SUNKEN)
+        self.fig_wave = Figure(figsize=(5,2))
+        self.ax_wave = self.fig_wave.add_subplot(111)
+        self.canvas_wave = FigureCanvasTkAgg(self.fig_wave, master=self.wave_frame)
+        self.canvas_wave.get_tk_widget().pack(fill=tk.BOTH, expand=True)
+        self.right_paned.add(self.wave_frame)
+        # Spectrum
+        self.spek_frame = tk.Frame(self.right_paned, bd=2, relief=tk.SUNKEN)
+        self.fig_spek = Figure(figsize=(5,2))
+        self.ax_spek = self.fig_spek.add_subplot(111)
+        self.canvas_spek = FigureCanvasTkAgg(self.fig_spek, master=self.spek_frame)
+        self.canvas_spek.get_tk_widget().pack(fill=tk.BOTH, expand=True)
+        self.right_paned.add(self.spek_frame)
+        self.right_paned.pack(side=tk.LEFT, fill=tk.BOTH, expand=True)
+
+    def select_folder(self):
+        folder = filedialog.askdirectory()
+        if folder:
+            self.output_folder = folder
+
+    def run_analysis(self):
+        # Clear table
+        self.tree.delete(*self.tree.get_children())
+        results = []
+        files = [f for f in os.listdir(self.output_folder) if f.lower().endswith('.mp3')]
+        for f in files:
+            # Clean name
+            base, ext = os.path.splitext(f)
+            display_name = base.split(' [')[0] + ext
+            path = os.path.join(self.output_folder, f)
+            y, sr = librosa.load(path, sr=None, mono=True)
+            bpm = int(round(librosa.beat.beat_track(y=y, sr=sr)[0]))
+            key = self.detect_key(y, sr)
+            code = key_to_camelot.get(key, '')
+            compat = get_camelot_compat(code)
+            key_display = f"{key} ({code}) [{compat}]" if code else key
+            rms = float(np.mean(librosa.feature.rms(y=y)))
+            energy = min(max(int(round(rms*10)),1),10)
+            energy_color = get_energy_color(energy)
+            self.tree.insert('', 'end', values=(display_name, bpm, key_display, energy_color, compat))
+            results.append({
+                'file': display_name,
+                'bpm': bpm,
+                'key': key_display,
+                'energy': energy,
+                'compatible': compat
+            })
+        df = pd.DataFrame(results)
+        df.to_csv(os.path.join(self.output_folder, 'analysis_results.csv'), index=False)
+        messagebox.showinfo('Analysis', 'Analysis saved.')
+
+    def detect_key(self, y, sr):
+        return "C#m"  # TODO: real detection
+
+    def optimize_playlist(self):
+        # ... implementation
+        pass
+
+    def quantize_tracks(self):
+        # ... implementation
+        pass
+
+    def check_quality(self):
+        # ... implementation
+        pass
+
+    def load_selected(self):
+        sel = self.tree.selection()
+        if not sel: return
+        file = self.tree.item(sel[0])['values'][0]
+        path = os.path.join(self.output_folder, file)
+        y, sr = librosa.load(path, sr=None, mono=True)
+        self.ax_wave.clear()
+        self.ax_spek.clear()
+        self.ax_wave.plot(y)
+        seg = y[:min(len(y), sr*5)]
+        S = np.abs(np.fft.rfft(seg))
+        freqs = np.fft.rfftfreq(len(seg), 1/sr)
+        self.ax_spek.plot(freqs, S)
+        self.canvas_wave.draw()
+        self.canvas_spek.draw()
+
+    def stop_all(self):
+        self.ax_wave.clear()
+        self.ax_spek.clear()
+        self.canvas_wave.draw()
+        self.canvas_spek.draw()
+
+if __name__ == '__main__':
+    root = tk.Tk()
+    DJAnalyzerApp(root)
+    root.mainloop()

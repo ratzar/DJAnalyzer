@@ -1,0 +1,45 @@
+=== DIAGNOSTIC LOG ===
+Avvio: 2025-05-09 18:46:18.713792
+
+[2025-05-09 18:46:29] Inizio analisi: D:/ToolBox/TidalConvert/dance2/dance_2\Africa [92.29] [92.29] [92.29] [92.29] [92.29] [92.29] [92.29] [92.29].mp3
+[2025-05-09 18:46:42] Analisi completata: BPM=92.29, Key=C#m
+[2025-05-09 18:46:42] Inizio analisi: D:/ToolBox/TidalConvert/dance2/dance_2\Aliens [99.38] [99.38] [99.38] [99.38] [99.38] [99.38] [99.38] [99.38].mp3
+[2025-05-09 18:46:43] Analisi completata: BPM=99.38, Key=Gm
+[2025-05-09 18:46:43] Inizio analisi: D:/ToolBox/TidalConvert/dance2/dance_2\Always on My Mind (2003 Remaster) [123.05] [123.05] [123.05] [123.05] [123.05] [123.05] [123.05] [123.05].mp3
+[2025-05-09 18:46:44] Analisi completata: BPM=123.05, Key=Dm
+[2025-05-09 18:46:44] Inizio analisi: D:/ToolBox/TidalConvert/dance2/dance_2\Big in Japan [99.38] [99.38] [99.38] [99.38] [99.38] [99.38] [99.38] [99.38].mp3
+[2025-05-09 18:46:45] Analisi completata: BPM=99.38, Key=Am
+[2025-05-09 18:46:45] Inizio analisi: D:/ToolBox/TidalConvert/dance2/dance_2\Bitter Fruit [117.45] [117.45] [117.45] [117.45] [117.45] [117.45] [117.45] [117.45].mp3
+[2025-05-09 18:46:47] Analisi completata: BPM=117.45, Key=Cm
+[2025-05-09 18:46:47] Inizio analisi: D:/ToolBox/TidalConvert/dance2/dance_2\Bitter Sweet Symphony(Remastered 2016) [172.27] [172.27] [172.27] [172.27] [172.27] [172.27] [172.27] [172.27].mp3
+[2025-05-09 18:46:48] Analisi completata: BPM=172.27, Key=Em
+[2025-05-09 18:46:48] Inizio analisi: D:/ToolBox/TidalConvert/dance2/dance_2\Blue Monday '88 (2015 Remaster) [129.20] [129.20] [129.20] [129.20] [129.20] [129.20] [129.20] [129.20].mp3
+[2025-05-09 18:46:49] Analisi completata: BPM=129.2, Key=Dm
+[2025-05-09 18:46:49] Inizio analisi: D:/ToolBox/TidalConvert/dance2/dance_2\Bolero [117.45] [117.45] [117.45] [117.45] [117.45] [117.45] [117.45].mp3
+[2025-05-09 18:46:51] Analisi completata: BPM=117.45, Key=D#m
+[2025-05-09 18:46:51] Inizio analisi: D:/ToolBox/TidalConvert/dance2/dance_2\Chance To Desire (Album Version) [107.67] [107.67] [107.67] [107.67] [107.67] [107.67] [107.67].mp3
+[2025-05-09 18:46:52] Analisi completata: BPM=107.67, Key=Bm
+[2025-05-09 18:46:52] Inizio analisi: D:/ToolBox/TidalConvert/dance2/dance_2\Chance To Desire (Vocal Version) [107.67] [107.67] [107.67] [107.67] [107.67] [107.67] [107.67].mp3
+[2025-05-09 18:46:54] Analisi completata: BPM=107.67, Key=Bm
+[2025-05-09 18:46:54] Inizio analisi: D:/ToolBox/TidalConvert/dance2/dance_2\Che sventola(Remastered) [123.05] [123.05] [123.05] [123.05] [123.05] [123.05] [123.05].mp3
+[2025-05-09 18:46:55] Analisi completata: BPM=123.05, Key=Gm
+[2025-05-09 18:46:55] Inizio analisi: D:/ToolBox/TidalConvert/dance2/dance_2\Cicale [136.00] [136.00] [136.00] [136.00] [136.00] [136.00] [136.00].mp3
+[2025-05-09 18:46:56] Analisi completata: BPM=136.0, Key=Gm
+[2025-05-09 18:46:56] Inizio analisi: D:/ToolBox/TidalConvert/dance2/dance_2\Cruel Summer [107.67] [107.67] [107.67] [107.67] [107.67] [107.67] [107.67].mp3
+[2025-05-09 18:46:57] Analisi completata: BPM=107.67, Key=G#m
+[2025-05-09 18:46:57] Inizio analisi: D:/ToolBox/TidalConvert/dance2/dance_2\Desire [103.36] [103.36].mp3
+[2025-05-09 18:46:58] Analisi completata: BPM=103.36, Key=Cm
+[2025-05-09 18:46:58] Inizio analisi: D:/ToolBox/TidalConvert/dance2/dance_2\Disco Band [112.35] [112.35].mp3
+[2025-05-09 18:46:59] Analisi completata: BPM=112.35, Key=D#m
+[2025-05-09 18:46:59] Inizio analisi: D:/ToolBox/TidalConvert/dance2/dance_2\Dolce Vita(Classic) [117.45] [117.45].mp3
+[2025-05-09 18:47:00] Analisi completata: BPM=117.45, Key=Cm
+[2025-05-09 18:47:00] Inizio analisi: D:/ToolBox/TidalConvert/dance2/dance_2\Don't Leave Me This Way (with Sarah Jane Morris) [129.20] [129.20].mp3
+[2025-05-09 18:47:01] Analisi completata: BPM=129.2, Key=C#m
+[2025-05-09 18:47:01] Inizio analisi: D:/ToolBox/TidalConvert/dance2/dance_2\Don't You (Forget About Me) [112.35] [112.35].mp3
+[2025-05-09 18:47:02] Analisi completata: BPM=112.35, Key=Em
+[2025-05-09 18:47:02] Inizio analisi: D:/ToolBox/TidalConvert/dance2/dance_2\Don't You Want Me [117.45] [117.45].mp3
+[2025-05-09 18:47:03] Analisi completata: BPM=117.45, Key=Am
+[2025-05-09 18:47:03] Inizio analisi: D:/ToolBox/TidalConvert/dance2/dance_2\Enola Gay (Remastered 2003) [143.55] [143.55].mp3
+[2025-05-09 18:47:04] Analisi completata: BPM=143.55, Key=Dm
+[2025-05-09 18:47:04] Inizio analisi: D:/ToolBox/TidalConvert/dance2/dance_2\Faith(Remastered) [95.70] [95.70].mp3
+[2025-05-09 18:47:05] Analisi completata: BPM=95.7, Key=Em

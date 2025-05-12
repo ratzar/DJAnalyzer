@@ -1,0 +1,68 @@
+algoritmo\algoritmo
+API\a pi i
+backend\bèc end
+bug\bag
+debug\di bag
+deploy\di ploi
+frontend\fron end
+framework\frèim uork
+full stack\ful stac
+hosting\òsting
+HTML\acca ti emme elle
+CSS\ci esse esse
+JavaScript\giava script
+libreria\libreria
+machine learning\mascin lèrning
+modello predittivo\modello predittivo
+neural network\niural nét uork
+prompt\pront
+script\scrip
+server\sèrver
+sistema operativo\sistema operativo
+snippet\snìpet
+stack\stac
+token\tòken
+UI\u ai
+UX\u ex
+variabile\variabile
+ChatGPT\ciat gi pi ti
+dataset\dèita set
+fine-tuning\fain tiùning
+generativo\generativo
+GPT\gi pi ti
+inferenza\inferenza
+LLM\elle elle emme
+NLP\enne elle pi
+prompt engineering\prompt ingegnering
+tokenizzazione\tokenizzazione
+training\trèining
+vettorializzazione\vettorializzazione
+commit\comìt
+forkare\forcare
+pushare\pusciare
+pull request\pul ricuèst
+repository\ripòsitori
+scriptare\scrip tàre
+uploadare\ap lodare
+versioning\versioning
+feedback\fid bec
+task\tasc
+workflow\uorc flò
+deadline\dèd lain
+meeting\miting
+brainstorming\brèn stòrming
+update\apdèit
+draft\dràft
+issue\isciù
+milestone\mailstòn
+goal\gòl
+feature\fìciur
+release\rilìs
+roadmap\ròdmep
+buttare su un server\buttare su un sèrver
+fare il deploy\fare il di ploi
+scrivere un prompt\scrivere un pront
+fare il training\fare il trèining
+spingere su GitHub\spingere su git ab
+refactorare il codice\rifattorare il codice
+buildare l'app\bildare l'app

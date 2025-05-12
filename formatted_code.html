@@ -1,0 +1,261 @@
+
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Codice Colorato</title>
+        <style>
+            pre { line-height: 125%; }
+td.linenos .normal { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
+span.linenos { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
+td.linenos .special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
+span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
+.highlight .hll { background-color: #49483e }
+.highlight .c { color: #959077 } /* Comment */
+.highlight .err { color: #ED007E; background-color: #1E0010 } /* Error */
+.highlight .esc { color: #F8F8F2 } /* Escape */
+.highlight .g { color: #F8F8F2 } /* Generic */
+.highlight .k { color: #66D9EF } /* Keyword */
+.highlight .l { color: #AE81FF } /* Literal */
+.highlight .n { color: #F8F8F2 } /* Name */
+.highlight .o { color: #FF4689 } /* Operator */
+.highlight .x { color: #F8F8F2 } /* Other */
+.highlight .p { color: #F8F8F2 } /* Punctuation */
+.highlight .ch { color: #959077 } /* Comment.Hashbang */
+.highlight .cm { color: #959077 } /* Comment.Multiline */
+.highlight .cp { color: #959077 } /* Comment.Preproc */
+.highlight .cpf { color: #959077 } /* Comment.PreprocFile */
+.highlight .c1 { color: #959077 } /* Comment.Single */
+.highlight .cs { color: #959077 } /* Comment.Special */
+.highlight .gd { color: #FF4689 } /* Generic.Deleted */
+.highlight .ge { color: #F8F8F2; font-style: italic } /* Generic.Emph */
+.highlight .ges { color: #F8F8F2; font-weight: bold; font-style: italic } /* Generic.EmphStrong */
+.highlight .gr { color: #F8F8F2 } /* Generic.Error */
+.highlight .gh { color: #F8F8F2 } /* Generic.Heading */
+.highlight .gi { color: #A6E22E } /* Generic.Inserted */
+.highlight .go { color: #66D9EF } /* Generic.Output */
+.highlight .gp { color: #FF4689; font-weight: bold } /* Generic.Prompt */
+.highlight .gs { color: #F8F8F2; font-weight: bold } /* Generic.Strong */
+.highlight .gu { color: #959077 } /* Generic.Subheading */
+.highlight .gt { color: #F8F8F2 } /* Generic.Traceback */
+.highlight .kc { color: #66D9EF } /* Keyword.Constant */
+.highlight .kd { color: #66D9EF } /* Keyword.Declaration */
+.highlight .kn { color: #FF4689 } /* Keyword.Namespace */
+.highlight .kp { color: #66D9EF } /* Keyword.Pseudo */
+.highlight .kr { color: #66D9EF } /* Keyword.Reserved */
+.highlight .kt { color: #66D9EF } /* Keyword.Type */
+.highlight .ld { color: #E6DB74 } /* Literal.Date */
+.highlight .m { color: #AE81FF } /* Literal.Number */
+.highlight .s { color: #E6DB74 } /* Literal.String */
+.highlight .na { color: #A6E22E } /* Name.Attribute */
+.highlight .nb { color: #F8F8F2 } /* Name.Builtin */
+.highlight .nc { color: #A6E22E } /* Name.Class */
+.highlight .no { color: #66D9EF } /* Name.Constant */
+.highlight .nd { color: #A6E22E } /* Name.Decorator */
+.highlight .ni { color: #F8F8F2 } /* Name.Entity */
+.highlight .ne { color: #A6E22E } /* Name.Exception */
+.highlight .nf { color: #A6E22E } /* Name.Function */
+.highlight .nl { color: #F8F8F2 } /* Name.Label */
+.highlight .nn { color: #F8F8F2 } /* Name.Namespace */
+.highlight .nx { color: #A6E22E } /* Name.Other */
+.highlight .py { color: #F8F8F2 } /* Name.Property */
+.highlight .nt { color: #FF4689 } /* Name.Tag */
+.highlight .nv { color: #F8F8F2 } /* Name.Variable */
+.highlight .ow { color: #FF4689 } /* Operator.Word */
+.highlight .pm { color: #F8F8F2 } /* Punctuation.Marker */
+.highlight .w { color: #F8F8F2 } /* Text.Whitespace */
+.highlight .mb { color: #AE81FF } /* Literal.Number.Bin */
+.highlight .mf { color: #AE81FF } /* Literal.Number.Float */
+.highlight .mh { color: #AE81FF } /* Literal.Number.Hex */
+.highlight .mi { color: #AE81FF } /* Literal.Number.Integer */
+.highlight .mo { color: #AE81FF } /* Literal.Number.Oct */
+.highlight .sa { color: #E6DB74 } /* Literal.String.Affix */
+.highlight .sb { color: #E6DB74 } /* Literal.String.Backtick */
+.highlight .sc { color: #E6DB74 } /* Literal.String.Char */
+.highlight .dl { color: #E6DB74 } /* Literal.String.Delimiter */
+.highlight .sd { color: #E6DB74 } /* Literal.String.Doc */
+.highlight .s2 { color: #E6DB74 } /* Literal.String.Double */
+.highlight .se { color: #AE81FF } /* Literal.String.Escape */
+.highlight .sh { color: #E6DB74 } /* Literal.String.Heredoc */
+.highlight .si { color: #E6DB74 } /* Literal.String.Interpol */
+.highlight .sx { color: #E6DB74 } /* Literal.String.Other */
+.highlight .sr { color: #E6DB74 } /* Literal.String.Regex */
+.highlight .s1 { color: #E6DB74 } /* Literal.String.Single */
+.highlight .ss { color: #E6DB74 } /* Literal.String.Symbol */
+.highlight .bp { color: #F8F8F2 } /* Name.Builtin.Pseudo */
+.highlight .fm { color: #A6E22E } /* Name.Function.Magic */
+.highlight .vc { color: #F8F8F2 } /* Name.Variable.Class */
+.highlight .vg { color: #F8F8F2 } /* Name.Variable.Global */
+.highlight .vi { color: #F8F8F2 } /* Name.Variable.Instance */
+.highlight .vm { color: #F8F8F2 } /* Name.Variable.Magic */
+.highlight .il { color: #AE81FF } /* Literal.Number.Integer.Long */
+            body { 
+                background: #2a2a2a;
+                padding: 20px;
+                color: #f8f8f2;
+            }
+            .copy-btn {
+                position: fixed;
+                top: 10px;
+                right: 10px;
+                padding: 8px;
+                background: #66d9ef;
+                border: none;
+                border-radius: 4px;
+                cursor: pointer;
+                color: #000;
+            }
+        </style>
+    </head>
+    <body>
+        <button class="copy-btn" onclick="copyCode()">Copia Codice</button>
+        <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+<!--
+generated by Pygments <https://pygments.org/>
+Copyright 2006-2025 by the Pygments team.
+Licensed under the BSD license, see LICENSE for details.
+-->
+<html>
+<head>
+  <title></title>
+  <meta http-equiv="content-type" content="text/html; charset=None">
+  <style type="text/css">
+/*
+generated by Pygments <https://pygments.org/>
+Copyright 2006-2025 by the Pygments team.
+Licensed under the BSD license, see LICENSE for details.
+*/
+pre { line-height: 125%; }
+td.linenos .normal { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
+span.linenos { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
+td.linenos .special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
+span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
+body .hll { background-color: #49483e }
+body { background: #272822; color: #F8F8F2 }
+body .c { color: #959077 } /* Comment */
+body .err { color: #ED007E; background-color: #1E0010 } /* Error */
+body .esc { color: #F8F8F2 } /* Escape */
+body .g { color: #F8F8F2 } /* Generic */
+body .k { color: #66D9EF } /* Keyword */
+body .l { color: #AE81FF } /* Literal */
+body .n { color: #F8F8F2 } /* Name */
+body .o { color: #FF4689 } /* Operator */
+body .x { color: #F8F8F2 } /* Other */
+body .p { color: #F8F8F2 } /* Punctuation */
+body .ch { color: #959077 } /* Comment.Hashbang */
+body .cm { color: #959077 } /* Comment.Multiline */
+body .cp { color: #959077 } /* Comment.Preproc */
+body .cpf { color: #959077 } /* Comment.PreprocFile */
+body .c1 { color: #959077 } /* Comment.Single */
+body .cs { color: #959077 } /* Comment.Special */
+body .gd { color: #FF4689 } /* Generic.Deleted */
+body .ge { color: #F8F8F2; font-style: italic } /* Generic.Emph */
+body .ges { color: #F8F8F2; font-weight: bold; font-style: italic } /* Generic.EmphStrong */
+body .gr { color: #F8F8F2 } /* Generic.Error */
+body .gh { color: #F8F8F2 } /* Generic.Heading */
+body .gi { color: #A6E22E } /* Generic.Inserted */
+body .go { color: #66D9EF } /* Generic.Output */
+body .gp { color: #FF4689; font-weight: bold } /* Generic.Prompt */
+body .gs { color: #F8F8F2; font-weight: bold } /* Generic.Strong */
+body .gu { color: #959077 } /* Generic.Subheading */
+body .gt { color: #F8F8F2 } /* Generic.Traceback */
+body .kc { color: #66D9EF } /* Keyword.Constant */
+body .kd { color: #66D9EF } /* Keyword.Declaration */
+body .kn { color: #FF4689 } /* Keyword.Namespace */
+body .kp { color: #66D9EF } /* Keyword.Pseudo */
+body .kr { color: #66D9EF } /* Keyword.Reserved */
+body .kt { color: #66D9EF } /* Keyword.Type */
+body .ld { color: #E6DB74 } /* Literal.Date */
+body .m { color: #AE81FF } /* Literal.Number */
+body .s { color: #E6DB74 } /* Literal.String */
+body .na { color: #A6E22E } /* Name.Attribute */
+body .nb { color: #F8F8F2 } /* Name.Builtin */
+body .nc { color: #A6E22E } /* Name.Class */
+body .no { color: #66D9EF } /* Name.Constant */
+body .nd { color: #A6E22E } /* Name.Decorator */
+body .ni { color: #F8F8F2 } /* Name.Entity */
+body .ne { color: #A6E22E } /* Name.Exception */
+body .nf { color: #A6E22E } /* Name.Function */
+body .nl { color: #F8F8F2 } /* Name.Label */
+body .nn { color: #F8F8F2 } /* Name.Namespace */
+body .nx { color: #A6E22E } /* Name.Other */
+body .py { color: #F8F8F2 } /* Name.Property */
+body .nt { color: #FF4689 } /* Name.Tag */
+body .nv { color: #F8F8F2 } /* Name.Variable */
+body .ow { color: #FF4689 } /* Operator.Word */
+body .pm { color: #F8F8F2 } /* Punctuation.Marker */
+body .w { color: #F8F8F2 } /* Text.Whitespace */
+body .mb { color: #AE81FF } /* Literal.Number.Bin */
+body .mf { color: #AE81FF } /* Literal.Number.Float */
+body .mh { color: #AE81FF } /* Literal.Number.Hex */
+body .mi { color: #AE81FF } /* Literal.Number.Integer */
+body .mo { color: #AE81FF } /* Literal.Number.Oct */
+body .sa { color: #E6DB74 } /* Literal.String.Affix */
+body .sb { color: #E6DB74 } /* Literal.String.Backtick */
+body .sc { color: #E6DB74 } /* Literal.String.Char */
+body .dl { color: #E6DB74 } /* Literal.String.Delimiter */
+body .sd { color: #E6DB74 } /* Literal.String.Doc */
+body .s2 { color: #E6DB74 } /* Literal.String.Double */
+body .se { color: #AE81FF } /* Literal.String.Escape */
+body .sh { color: #E6DB74 } /* Literal.String.Heredoc */
+body .si { color: #E6DB74 } /* Literal.String.Interpol */
+body .sx { color: #E6DB74 } /* Literal.String.Other */
+body .sr { color: #E6DB74 } /* Literal.String.Regex */
+body .s1 { color: #E6DB74 } /* Literal.String.Single */
+body .ss { color: #E6DB74 } /* Literal.String.Symbol */
+body .bp { color: #F8F8F2 } /* Name.Builtin.Pseudo */
+body .fm { color: #A6E22E } /* Name.Function.Magic */
+body .vc { color: #F8F8F2 } /* Name.Variable.Class */
+body .vg { color: #F8F8F2 } /* Name.Variable.Global */
+body .vi { color: #F8F8F2 } /* Name.Variable.Instance */
+body .vm { color: #F8F8F2 } /* Name.Variable.Magic */
+body .il { color: #AE81FF } /* Literal.Number.Integer.Long */
+
+  </style>
+</head>
+<body>
+<h2></h2>
+
+<div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">RealKeyFinder</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">major_profile</span> <span class="o">=</span> <span class="p">[</span><span class="mf">6.35</span><span class="p">,</span> <span class="mf">2.23</span><span class="p">,</span> <span class="mf">3.48</span><span class="p">,</span> <span class="mf">2.33</span><span class="p">,</span> <span class="mf">4.38</span><span class="p">,</span> <span class="mf">4.09</span><span class="p">,</span> <span class="mf">2.52</span><span class="p">,</span> <span class="mf">5.19</span><span class="p">,</span> <span class="mf">2.39</span><span class="p">,</span> <span class="mf">3.66</span><span class="p">,</span> <span class="mf">2.29</span><span class="p">,</span> <span class="mf">2.88</span><span class="p">]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">minor_profile</span> <span class="o">=</span> <span class="p">[</span><span class="mf">6.33</span><span class="p">,</span> <span class="mf">2.68</span><span class="p">,</span> <span class="mf">3.52</span><span class="p">,</span> <span class="mf">5.38</span><span class="p">,</span> <span class="mf">2.60</span><span class="p">,</span> <span class="mf">3.53</span><span class="p">,</span> <span class="mf">2.54</span><span class="p">,</span> <span class="mf">4.75</span><span class="p">,</span> <span class="mf">3.98</span><span class="p">,</span> <span class="mf">2.69</span><span class="p">,</span> <span class="mf">3.34</span><span class="p">,</span> <span class="mf">3.17</span><span class="p">]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">notes</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;C&#39;</span><span class="p">,</span> <span class="s1">&#39;C#&#39;</span><span class="p">,</span> <span class="s1">&#39;D&#39;</span><span class="p">,</span> <span class="s1">&#39;D#&#39;</span><span class="p">,</span> <span class="s1">&#39;E&#39;</span><span class="p">,</span> <span class="s1">&#39;F&#39;</span><span class="p">,</span> <span class="s1">&#39;F#&#39;</span><span class="p">,</span> <span class="s1">&#39;G&#39;</span><span class="p">,</span> <span class="s1">&#39;G#&#39;</span><span class="p">,</span> <span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="s1">&#39;A#&#39;</span><span class="p">,</span> <span class="s1">&#39;B&#39;</span><span class="p">]</span>
+    
+    <span class="k">def</span><span class="w"> </span><span class="nf">analyze_file</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">file_path</span><span class="p">):</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="kn">import</span><span class="w"> </span><span class="nn">librosa</span>
+            <span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+            <span class="n">y</span><span class="p">,</span> <span class="n">sr</span> <span class="o">=</span> <span class="n">librosa</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">file_path</span><span class="p">)</span>
+            <span class="n">chroma</span> <span class="o">=</span> <span class="n">librosa</span><span class="o">.</span><span class="n">feature</span><span class="o">.</span><span class="n">chroma_cqt</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="n">y</span><span class="p">,</span> <span class="n">sr</span><span class="o">=</span><span class="n">sr</span><span class="p">)</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_detect_key</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">chroma</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">))</span>
+        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;Errore: </span><span class="si">{</span><span class="nb">str</span><span class="p">(</span><span class="n">e</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span>
+    
+    <span class="k">def</span><span class="w"> </span><span class="nf">_detect_key</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">chroma_vector</span><span class="p">):</span>
+        <span class="n">correlations</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">12</span><span class="p">):</span>
+            <span class="n">major_rotated</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">roll</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">major_profile</span><span class="p">,</span> <span class="n">i</span><span class="p">)</span>
+            <span class="n">minor_rotated</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">roll</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">minor_profile</span><span class="p">,</span> <span class="n">i</span><span class="p">)</span>
+            <span class="n">corr_major</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">corrcoef</span><span class="p">(</span><span class="n">chroma_vector</span><span class="p">,</span> <span class="n">major_rotated</span><span class="p">)[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span>
+            <span class="n">corr_minor</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">corrcoef</span><span class="p">(</span><span class="n">chroma_vector</span><span class="p">,</span> <span class="n">minor_rotated</span><span class="p">)[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span>
+            <span class="n">correlations</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">corr_major</span><span class="p">,</span> <span class="n">corr_minor</span><span class="p">))</span>
+        
+        <span class="n">best_key</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">([</span><span class="nb">max</span><span class="p">(</span><span class="n">maj</span><span class="p">,</span> <span class="nb">min</span><span class="p">)</span> <span class="k">for</span> <span class="n">maj</span><span class="p">,</span> <span class="nb">min</span> <span class="ow">in</span> <span class="n">correlations</span><span class="p">])</span>
+        <span class="n">mode</span> <span class="o">=</span> <span class="s1">&#39;maj&#39;</span> <span class="k">if</span> <span class="n">correlations</span><span class="p">[</span><span class="n">best_key</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">correlations</span><span class="p">[</span><span class="n">best_key</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="k">else</span> <span class="s1">&#39;min&#39;</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">notes</span><span class="p">[</span><span class="n">best_key</span><span class="p">]</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">mode</span><span class="si">}</span><span class="s2">&quot;</span>
+</pre></div>
+</body>
+</html>
+
+        <script>
+            function copyCode() {
+                const code = document.querySelector('.highlight pre').innerText;
+                navigator.clipboard.writeText(code);
+                alert('Codice copiato!');
+            }
+        </script>
+    </body>
+    </html>
+    
