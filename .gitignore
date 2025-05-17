@@ -144,9 +144,17 @@ cython_debug/
 .pypirc
 
 # Python
-output/
+__pycache__/
+*.py[cod]
+.env
+venv/
+
+# Output e log
+*.log
 
 # IDE e sistema
 .vscode/
 .DS_Store
+
+# Thumbs.db
 Thumbs.db

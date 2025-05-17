@@ -1,0 +1,6 @@
+cffi==1.17.1
+numpy==2.2.5
+pycparser==2.22
+pyrubberband==0.4.0
+soundfile==0.13.1
+tkinterdnd2==0.4.3
