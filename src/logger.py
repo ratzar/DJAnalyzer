@@ -1,11 +1,11 @@
+# -*- coding: utf-8 -*-
 import logging
 
-logger = logging.getLogger("DJAnalyzer")
-logger.setLevel(logging.INFO)
-handler = logging.StreamHandler()
-formatter = logging.Formatter("%(asctime)s - %(levelname)s - %(message)s")
-handler.setFormatter(formatter)
-logger.addHandler(handler)
+logging.basicConfig(level=logging.INFO)
 
-# Uso: logger.info("Messaggio di log")
+def log_message(message):
+    logging.info(message)
 
+# Esempio di utilizzo
+if __name__ == "__main__":
+    log_message("Questo è un messaggio di log di esempio.")
