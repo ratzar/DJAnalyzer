@@ -1,3 +1,9 @@
+# Ignora tutto tranne la cartella scripts
+/*
+!/scripts/
+!/.gitignore
+!/requirements.txt
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
