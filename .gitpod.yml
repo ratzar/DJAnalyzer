@@ -1,0 +1,33 @@
+image:
+  file: .gitpod.Dockerfile
+
+tasks:
+  - init: |
+      # 1) Carica Conda
+      source /opt/conda/etc/profile.d/conda.sh
+      # 2) Crea o aggiorna l'env djanalizer
+      if conda env list | grep -q djanalizer; then
+        conda env update -n djanalizer -f environment.yml
+      else
+        conda env create -n djanalizer -f environment.yml
+      fi
+      # 3) Attiva l'env
+      conda activate djanalizer
+      # 4) (facoltativo) installa wheel locali
+      if [ -d wheelhouse ]; then
+        pip install --no-index --find-links=wheelhouse -r requirements.txt
+      fi
+    command: |
+      # Shell live: l'env è già attivo
+      echo "🌱 Env 'djanalizer' pronto!"
+      # ad esempio, lancia subito i test
+      python -m pytest --maxfail=1 --disable-warnings -q
+
+ports:
+  - port: 8000
+    onOpen: open-preview
+
+vscode:
+  extensions:
+    - ms-python.python
+    - ms-toolsai.jupyter
