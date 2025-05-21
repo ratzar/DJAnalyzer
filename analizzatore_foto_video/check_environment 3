@@ -1,0 +1,15 @@
+1. Verifica MSBuild:
+   msbuild /version
+   >> Dovresti vedere: 17.13.19.12613
+
+2. Verifica compilatore C++:
+   cl /?
+   >> Dovresti vedere: "Microsoft (R) C/C++ Optimizing Compiler Version 19.43.xxxxx"
+
+3. Verifica CMake:
+   cmake --version
+   >> Dovresti vedere: cmake version 3.28.1 o superiore
+
+4. Verifica Python:
+   python --version
+   >> Dovresti vedere: Python 3.10.x

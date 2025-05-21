@@ -1,0 +1,13 @@
+{
+    "dipendenze": [
+        "opencv-python",
+        "mediapipe",
+        "pillow"
+    ],
+    "ultimo_lavoro": "Implementato rilevamento gesti",
+    "prossimi_passi": "Aggiungere filtro per dimensioni immagini",
+    "configurazioni": {
+        "soglia_scena": 0.3,
+        "intervallo_campionamento": 5
+    }
+}

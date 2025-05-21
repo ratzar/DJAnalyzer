@@ -4,6 +4,8 @@
 !/src/
 !/notebook/
 !/models/
+!/analizzatore_foto_video/
+!/analizzatore_foto_video/**
 !/.gitignore
 !/requirements.txt
 !/.gitpod.yml
