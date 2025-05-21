@@ -5,23 +5,35 @@ tasks:
   - init: |
       # 1) Carica Conda
       source /opt/conda/etc/profile.d/conda.sh
-      # 2) Crea o aggiorna l'env djanalizer
-      if conda env list | grep -q djanalizer; then
-        conda env update -n djanalizer -f environment.yml
+      
+      # 2) Crea o aggiorna l'env djanalizer SOLO SE environment.yml esiste
+      if [ -f environment.yml ]; then
+        if conda env list | grep -q djanalizer; then
+          conda env update -n djanalizer -f environment.yml
+        else
+          conda env create -n djanalizer -f environment.yml
+        fi
       else
-        conda env create -n djanalizer -f environment.yml
+        echo "⚠️ File environment.yml non trovato. Skipping env creation."
       fi
-      # 3) Attiva l'env
-      conda activate djanalizer
-      # 4) (facoltativo) installa wheel locali
-      if [ -d wheelhouse ]; then
+
+      # 3) Attiva l'env se esiste
+      conda activate djanalizer || echo "⚠️ Env djanalizer non trovato"
+
+      # 4) Installa wheel solo se presenti
+      if [ -d wheelhouse ] && [ -f requirements.txt ]; then
         pip install --no-index --find-links=wheelhouse -r requirements.txt
+      else
+        echo "ℹ️ wheelhouse o requirements.txt non presenti. Skip install."
       fi
     command: |
-      # Shell live: l'env è già attivo
-      echo "🌱 Env 'djanalizer' pronto!"
-      # ad esempio, lancia subito i test
-      python -m pytest --maxfail=1 --disable-warnings -q
+      echo "🌱 Ambiente pronto!"
+      # Lancia i test solo se pytest è installato
+      if command -v pytest >/dev/null 2>&1; then
+        python -m pytest --maxfail=1 --disable-warnings -q
+      else
+        echo "ℹ️ Pytest non installato, test saltati."
+      fi
 
 ports:
   - port: 8000
