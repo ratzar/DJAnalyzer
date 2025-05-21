@@ -85,3 +85,25 @@ pause per  Poter cambiare il ciclo di lavoro o aggiungere qualcosa.
 
  tutto questo lavoro sarà presente su  GITHUB  in modo che  al Chatgpt.  posso ogni volta capire esattamente di cosa sta facendo per cui con tutte le modifiche salvateportare avanti il lavoro da dove si è arrivati 
 
+
+# DJAnalyzer
+
+Ambiente unificato per analisi audio e video/foto.
+
+## Struttura
+
+- `src/`: Codice audio DJAnalyzer
+- `video_analyzer/`: Progetti di analisi video e foto
+  - `analizzatore_foto_video/`: progetto specifico con script e demo
+- `models/`: modelli piccoli e leggeri
+
+## Setup rapido in Gitpod
+
+Clicca qui per aprire in Gitpod:  
+[![Apri in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/tuonome/DJAnalyzer)
+
+## File pesanti
+
+I file grandi sono esclusi dal repo.  
+Usa gli script `download_models.py` per scaricarli automaticamente.
+
