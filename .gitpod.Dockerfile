@@ -1,16 +1,21 @@
 FROM continuumio/miniconda3
 
-# installa mamba per risolvere più velocemente
+# Installa mamba per risolvere più velocemente
 RUN conda install -y -n base -c conda-forge mamba
 
-# copia i file di definizione
-COPY environment.yml requirements.txt wheelhouse/ /workspace/
+# Crea la cartella workspace
+WORKDIR /workspace
 
-# crea l'env djanalizer
-RUN mamba env create -n djanalizer -f /workspace/environment.yml
+# Copia solo i file che esistono, uno per uno (puoi commentarli se non ci sono)
+COPY environment.yml /workspace/
+COPY requirements.txt /workspace/
+COPY wheelhouse/ /workspace/wheelhouse/
 
-# auto-attiva l'env in ogni shell
+# Crea l'env djanalizer solo se environment.yml esiste
+RUN test -f /workspace/environment.yml && mamba env create -n djanalizer -f /workspace/environment.yml || echo "⚠️ environment.yml non trovato: skip env creation"
+
+# Auto-attiva l'env in ogni shell
 RUN echo "source /opt/conda/etc/profile.d/conda.sh && conda activate djanalizer" >> /etc/profile
 
-# espone PATH al tuo env
+# Espone PATH al tuo env
 ENV PATH="/opt/conda/envs/djanalizer/bin:${PATH}"
