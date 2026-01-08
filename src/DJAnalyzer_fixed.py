@@ -123,7 +123,11 @@ class DJAnalyzerGUI:
                     base, ext = os.path.splitext(fname)
                     new_name = f"{base} [{bpm_str}]{ext}"
                     new_path = os.path.join(self.input_folder, new_name)
-                    display = new_name if not os.path.exists(new_path) and os.rename(path, new_path) else fname
+                    if not os.path.exists(new_path):
+                        os.rename(path, new_path)
+                        display = new_name
+                    else:
+                        display = fname
                     self.tree.insert('', tk.END, values=(display, bpm_str, res['key']))
                     self.log.insert(tk.END, f"Fatto: {display}: {bpm_str} BPM, Key={res['key']}\n")
                 else:
